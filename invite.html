@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Join me on Ask a Neighbour</title>
+<meta property="og:title" content="Join me on Ask a Neighbour">
+<meta property="og:description" content="Find a pro your neighbours trust. Leaside neighbours rank the trades and helpers they actually use. No ads, nobody pays to rank.">
+<style>
+  :root { --green:#01563B; --bg:#FBFCFB; --text:#161F1A; --muted:#5B6560; --surface:#E2F1E8; --card:#FFFFFF; --border:#E1E8E4; --on:#FFFFFF; }
+  @media (prefers-color-scheme: dark) { :root { --green:#7FD1A8; --bg:#0F1512; --text:#E8EEEA; --muted:#AAB4AE; --surface:#1B2A22; --card:#16201B; --border:#26332C; --on:#06140E; } }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 480px; margin: 0 auto; padding: 56px 20px 64px; }
+  .eyebrow { color:var(--green); font-size:13px; font-weight:700; letter-spacing:.1em; }
+  h1 { font-size: 34px; line-height:1.15; margin: 8px 0 12px; }
+  p { color:var(--muted); margin: 0 0 24px; }
+  .card { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:20px; margin-top:16px; }
+  .step { font-weight:700; font-size:15px; margin-bottom:6px; }
+  .btn { display:block; text-align:center; text-decoration:none; font-weight:600; border-radius:16px; padding:16px; margin-top:12px; font-size:17px; }
+  .primary { background:var(--green); color:var(--on); }
+  .secondary { background:var(--surface); color:var(--green); }
+  ul { padding-left: 20px; color: var(--muted); margin: 0; }
+  li { margin: 6px 0; }
+  .small { color:var(--muted); font-size:13px; margin-top:28px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">ASK A NEIGHBOUR</div>
+  <h1>Find a pro your neighbours trust.</h1>
+  <p>A neighbour invited you. Leaside residents rank the trades and household help they've actually used, so you can see who's worth calling. No ads, and nobody pays to rank.</p>
+
+  <div class="card">
+    <div class="step">1. Get the app</div>
+    <a class="btn primary" id="get" href="https://testflight.apple.com/join/ptZ31jCt">Get Ask a Neighbour</a>
+  </div>
+  <div class="card" id="open-card">
+    <div class="step">2. Open your invite</div>
+    <div style="color:var(--muted);font-size:15px">Once it's installed, tap below so you and your neighbour follow each other.</div>
+    <a class="btn secondary" id="open" href="askaneighbour://">Open invite in the app</a>
+  </div>
+
+  <div class="card">
+    <ul>
+      <li>Verified Leaside reviews, separate from Google ratings</li>
+      <li>See which pros your friends rate highest</li>
+      <li>Free for neighbours</li>
+    </ul>
+  </div>
+  <div class="small">Ask a Neighbour is in early testing on iPhone through Apple's TestFlight. <a href="privacy.html" style="color:var(--green)">Privacy policy</a></div>
+</main>
+<script>
+  var code = (new URLSearchParams(location.search).get('c') || '').replace(/[^A-Za-z0-9_-]/g, '').slice(0, 40);
+  if (code) document.getElementById('open').href = 'askaneighbour://invite/' + code;
+  else document.getElementById('open-card').style.display = 'none';
+</script>
+</body>
+</html>
